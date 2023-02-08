@@ -12,40 +12,40 @@ public class Login extends BaseTest {
         driver = new DriverWrapper().getDriver();
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
-        driver.get("https://www.demoblaze.com/");
+        driver.get(URL);
     }
     @Test
     public void loginWithEmptyFields() {
-        homePage.clickLoginBtn()
-                .login("", "")
-                .verifyAlertMessageEmpty();
+        homePage.clickLoginBtn();
+        loginPage.login("", "");
+        loginPage.verifyAlertMessageEmpty();
     }
 
     @Test
     public void loginWithValidUsernameAndInvalidPassword() {
-        homePage.clickLoginBtn()
-                .login("Miljan", randTextWithNum("Test"))
-                .verifyAlertMessageInvalidPass();
+        homePage.clickLoginBtn();
+        loginPage.login("Miljan", randTextWithNum("Test"));
+        loginPage.verifyAlertMessageInvalidPass();
     }
 
     @Test
     public void loginWithInvalidUsername() {
-        homePage.clickLoginBtn()
-                .login(randTextWithNum("User"), "1111")
-                .verifyAlertMessageInvalidUser();
+        homePage.clickLoginBtn();
+        loginPage.login(randTextWithNum("User"), "1111");
+        loginPage.verifyAlertMessageInvalidUser();
     }
 
     @Test
     public void validLogin() {
-        homePage.clickLoginBtn()
-                .login("Miljan", "1234") ;
-                homePage.verifyIfWelcomeIsPresent();
+        homePage.clickLoginBtn();
+        loginPage.login("Miljan", "1234") ;
+        homePage.verifyIfWelcomeIsPresent();
     }
 
     @Test
     public void logout() {
-        homePage.clickLoginBtn()
-                .login("Miljan", "1234") ;
+        homePage.clickLoginBtn();
+        loginPage.login("Miljan", "1234") ;
         homePage.verifyIfWelcomeIsPresent();
         homePage.clickLogoutBtn();
         homePage.verifyIfLoginIsDisplayed();

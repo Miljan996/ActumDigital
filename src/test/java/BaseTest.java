@@ -1,11 +1,14 @@
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 
+import java.net.URL;
 import java.util.Random;
 
 
 public class BaseTest {
     static WebDriver driver;
+    public static final String URL = "https://www.demoblaze.com/";
+
 
     @AfterMethod
     public void cleanUp() {

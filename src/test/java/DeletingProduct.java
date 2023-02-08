@@ -15,7 +15,7 @@ public class DeletingProduct extends BaseTest {
         homePage = new HomePage(driver);
         cartPage = new CartPage(driver);
         productPage = new ProductPage(driver);
-        driver.get("https://www.demoblaze.com/");
+        driver.get(URL);
     }
 
     @Test

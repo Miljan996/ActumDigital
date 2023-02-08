@@ -13,7 +13,7 @@ public class AddToCart extends BaseTest {
         driver = new DriverWrapper().getDriver();
         homePage = new HomePage(driver);
         productPage = new ProductPage(driver);
-        driver.get("https://www.demoblaze.com/");
+        driver.get(URL);
     }
 
     @Test

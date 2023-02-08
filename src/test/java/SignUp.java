@@ -12,7 +12,7 @@ public class SignUp extends BaseTest{
         driver = new DriverWrapper().getDriver();
         homePage = new HomePage(driver);
         signUpPage = new SignUpPage(driver);
-        driver.get("https://www.demoblaze.com/");
+        driver.get(URL);
     }
 
     @Test

@@ -24,11 +24,10 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "(//button[contains(text(),'Close')])[3]")
     WebElement buttonClose;
 
-    public LoginPage login(String username, String password) {
+    public void login(String username, String password) {
         sendText(inp_UsernameLogin, username);
         sendText(inp_PasswordLogin, password);
         clickElement(buttonLogin);
-        return new LoginPage(driver);
     }
 
     public void verifyAlertMessageEmpty(){
